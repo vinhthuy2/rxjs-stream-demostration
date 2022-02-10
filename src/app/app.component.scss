@@ -1,0 +1,29 @@
+.stream {
+  position: relative;
+  height: 50px;
+  .timeline{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    border: 1px solid black;
+    &::after {
+      content: '>';
+      position: absolute;
+      top: 50%;
+      color: inherit;
+      transform: translateY(calc(-50% - 1px));
+      font-weight: bold;
+      right: -3px;
+    }
+    &.completed{
+      color: #cccccc;
+    }
+  }
+  .marble-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}

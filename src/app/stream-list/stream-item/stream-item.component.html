@@ -1,0 +1,45 @@
+<div class="container">
+  <h3>{{stream?.name}}</h3>
+  <div class="actions flex place-items-center justify-between">
+    <div class="mr-5">
+      <label for="interval">Interval (ms):</label>
+      <input name="interval"
+             type="number"
+             step="100"
+             class="px-1 py-1 shadow border rounded text-gray-700"
+             [(ngModel)]="interval"
+             [disabled]="intervalStarted">
+    </div>
+    <div class="flex gap-2 flex-wrap flex-1">
+      <button class="btn btn-blue" (click)="onStartInterval()">
+        <fa-icon [icon]="['fas','play']"></fa-icon>
+      </button>
+      <button class="btn btn-red" (click)="onStopInterval()">
+        <fa-icon [icon]="['fas','stop']"></fa-icon>
+      </button>
+      <button class="btn btn-orange" (click)="onTriggerClicked()">
+        <fa-icon [icon]="['fas','compress']"></fa-icon>
+      </button>
+      <button class="btn btn-red-outline" (click)="onCompleteClicked()">
+        <fa-icon [icon]="['fas','power-off']"></fa-icon>
+      </button>
+      <button class="btn btn-blue-outline" (click)="onClearStream()">
+        <fa-icon [icon]="['fas','broom']"></fa-icon>
+      </button>
+    </div>
+    <div>
+      <button class="btn text-neutral-500" (click)="onClearStream()">
+        <fa-icon [icon]="['fas','trash-alt']"></fa-icon>
+      </button>
+    </div>
+  </div>
+  <div class="stream">
+    <!-- <div class="marble"
+         *ngIf="marble$ | async as marble"
+         style="background-color: red;">{{marble}}</div> -->
+    <div class="timeline"
+         [ngClass]="{'completed': streamCompleted}"></div>
+    <div class="marble-container"
+         #streamRef></div>
+  </div>
+</div>
