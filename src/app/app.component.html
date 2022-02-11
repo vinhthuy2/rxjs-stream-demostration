@@ -1,23 +1,43 @@
-<div style="margin: auto; min-width: 800px; max-width: 1024px;">
-  <button class="btn btn-green"
-          (click)="onAddSteamClick()">Add stream</button>
-  <input type="number"
-         [(ngModel)]="speed"
-         step="1000"
-         class="px-1 py-1 shadow border rounded text-gray-700">
+<div class="container mx-auto mt-5">
+  <h1>RxJS Combination Operators</h1>
+  <div class="flex justify-between">
+    <div class="flex place-items-center gap-2">
+      <label for="speed">Speed (ms):</label>
+      <input type="number"
+             [(ngModel)]="speed"
+             step="1000"
+             class="px-1 py-1 shadow border rounded text-gray-700">
+    </div>
+    <button class="btn btn-green"
+            (click)="onAddSteamClick()">
+      <fa-icon [icon]="['fas','plus']"></fa-icon>
+    </button>
+  </div>
   <app-stream-list [speed]="speed"
                    [streamList]="streamList"></app-stream-list>
 
   <div id="result-stream">
     <div class="flex gap-2 place-items-center">
-      <label for="operator">Operator:</label>
-      <select class="px-1 py-1 shadow border rounded text-gray-700"
-              name="operator"
-              id="operator">
-        <option value="concat">concat</option>
-        <option value="merge">merge</option>
-        <option value="exhaust">exhaust</option>
-      </select>
+      <div class="flex gap-2 place-items-center">
+        <label for="operator">Operator:</label>
+        <select class="px-1 py-1 shadow border rounded text-gray-700"
+                name="operator"
+                id="operator"
+                [(ngModel)]="operator"
+                [disabled]="isListeningResult">
+          <option value="concat">concat</option>
+          <option value="merge">merge</option>
+          <option value="exhaust">exhaust</option>
+        </select>
+      </div>
+      <div class="flex gap-2 place-items-center">
+        <button class="btn btn-blue"
+                [disabled]="isListeningResult"
+                (click)="subscribeCombination()">Subscribe</button>
+        <button class="btn btn-red"
+                [disabled]="!isListeningResult"
+                (click)="unSubscribeCombination()">Unsubscribe</button>
+      </div>
     </div>
     <br>
     <div>

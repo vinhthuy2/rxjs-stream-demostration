@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
-import { StreamModel } from 'src/app/app.component';
+import { StreamModel } from "src/app/model/StreamModel";
 
 @Component({
   selector: 'app-stream-item',

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StreamModel } from '../app.component';
+import { StreamModel } from "../model/StreamModel";
 
 @Component({
   selector: 'app-stream-list',

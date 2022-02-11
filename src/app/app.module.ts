@@ -8,7 +8,7 @@ import { StreamItemComponent } from './stream-list/stream-item/stream-item.compo
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBroom, faCompress, faPlay, faPowerOff, faStop, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBroom, faCompress, faPlay, faPlus, faPowerOff, faStop, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ export class AppModule {
       faCompress,
       faPowerOff,
       faBroom,
-      faTrashAlt
+      faTrashAlt,
+      faPlus
     );
   }
 }
