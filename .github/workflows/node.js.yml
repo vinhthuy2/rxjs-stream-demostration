@@ -1,4 +1,4 @@
-- name: Angular Deploy gh-pages Actions
+
   # You may pin to the exact commit or the version.
   # uses: AhsanAyaz/angular-deploy-gh-pages-actions@2272ef32f364bc80d8680ee03d8e58f126156c31
   uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
